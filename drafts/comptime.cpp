@@ -29,12 +29,26 @@ string comptime(std::string aux) {
 			cout << "L[nmal] [comptime] - Successfully appended file extension: "<< aux << " became " << csvfile << endl;
 		}
 		std::fstream csvF(csvfile);
+		if( !in.is_open()){
+          		cout << "E[crit] [comptime] - Input file failed to open" << endl;
+    		}
 		string line = getline(csvF,1);
 		int len = line.length();
 		line.erase(25, len);
 		if (loglevel == 1) { 
 			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
 		}
+		int len1 = line.length();
+		line.erase(len1 - 8, len1);
+		string currTime = rtime();
+		int len2 = currTime.length();
+		currTime.erase(len2 - 8, len2);
+		if (line.compare(currTime) == 0){
+			
+		}
+
+
+		
 
 
 	}
