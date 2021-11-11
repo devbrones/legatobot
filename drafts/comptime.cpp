@@ -38,6 +38,27 @@ string comptime(std::string aux) {
 		if (loglevel == 1) { 
 			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
 		}
+
+		/*
+    		// now open temp output file
+		std::ofstream out("outfile.txt");
+    		// loop to read/write the file.  Note that you need to add code here to check
+    		// if you want to write the line
+    		while( getline(in,line) )
+    		{
+         		out << line << "\n";
+    		}
+    		in.close();
+    		out.close();    
+    		// delete the original file
+		std::remove("infile.txt");
+    		// rename old to new
+		std::rename("outfile.txt","infile.txt");
+
+		
+		 * */
+
+
 		int len1 = line.length();
 		line.erase(len1 - 8, len1);
 		string currTime = rtime();
