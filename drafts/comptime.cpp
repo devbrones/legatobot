@@ -25,10 +25,17 @@ string rtime()
 string comptime(std::string aux) {
 	try{
 		string csvfile = aux.append(".csv");
+		if (loglevel == 1) {
+			cout << "L[nmal] [comptime] - Successfully appended file extension: "<< aux << " became " << csvfile << endl;
+		}
 		std::fstream csvF(csvfile);
 		string line = getline(csvF,1);
 		int len = line.length();
 		line.erase(25, len);
+		if (loglevel == 1) { 
+			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
+		}
+
 
 	}
 	catch (const std::exception& e) {
