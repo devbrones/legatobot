@@ -29,7 +29,7 @@ string comptime(std::string aux) {
 			cout << "L[nmal] [comptime] - Successfully appended file extension: "<< aux << " became " << csvfile << endl;
 		}
 		std::fstream csvF(csvfile);
-		if( !in.is_open()){
+		if( !csvF.is_open()){
           		cout << "E[crit] [comptime] - Input file failed to open" << endl;
     		}
 		string line = getline(csvF,1);
@@ -39,25 +39,21 @@ string comptime(std::string aux) {
 			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
 		}
 
-		/*
+		
     		// now open temp output file
 		std::ofstream out("temp.csv");
     		// loop to read/write the file.  Note that you need to add code here to check
     		// if you want to write the line
-    		while( getline(in,line) ){
-         		out << line << "\n";
+    		while( getline(csvF,line) ){
+         		out << csF << "\n";
     		}
-    		in.close();
+    		csvF.close();
     		out.close();    
     		// delete the original file
 		std::remove(csvfile);
     		// rename old to new
 		std::rename("temp.csv",csvfile);
-
 		
-		 * */
-
-
 		int len1 = line.length();
 		line.erase(len1 - 8, len1);
 		string currTime = rtime();
