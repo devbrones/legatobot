@@ -41,19 +41,18 @@ string comptime(std::string aux) {
 
 		/*
     		// now open temp output file
-		std::ofstream out("outfile.txt");
+		std::ofstream out("temp.csv");
     		// loop to read/write the file.  Note that you need to add code here to check
     		// if you want to write the line
-    		while( getline(in,line) )
-    		{
+    		while( getline(in,line) ){
          		out << line << "\n";
     		}
     		in.close();
     		out.close();    
     		// delete the original file
-		std::remove("infile.txt");
+		std::remove(csvfile);
     		// rename old to new
-		std::rename("outfile.txt","infile.txt");
+		std::rename("temp.csv",csvfile);
 
 		
 		 * */
