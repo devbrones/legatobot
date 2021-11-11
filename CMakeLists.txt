@@ -5,7 +5,7 @@ project(DiscordSchoolity VERSION 1.0 DESCRIPTION "A discord bot that interacts w
  
 # Add DPP as dependency
 add_subdirectory(libs/DPP)
- 
+add_subdirectory(src/headers/) 
 # Create an executable
 add_executable(${PROJECT_NAME}
     src/main.cpp
