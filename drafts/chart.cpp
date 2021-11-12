@@ -13,7 +13,8 @@ string week(string type; int length; int style; ) {
 	 *  We want to generate these table structures, how? good question i dont know
 	 *  In all seriousness there is a for loop in there somewhere.
 	 *  
-	 *
+	 *  Im seriously concidering giving up on this cuz it be pain in the arse rn.
+	 *  But im stronk :3
 	 *
 	 *
 	 *
@@ -55,6 +56,14 @@ string week(string type; int length; int style; ) {
 
 string week( string type, int length, int style ) {
 	
-	string wtable[5][5] = {  {,,,,} , {,,,,} , {,,,,} , {,,,,} , {,,,,}  }
+	string wtable[5][5] = {  {subject,start,end,teacher,classroom} , {subject,start,end,teacher,classroom} , {course,start,end,teacher,classroom} , {subject,start,end,teacher,classroom} , {subject,start,end,teacher,classroom} }
+	int i,j;
+	
+	for(i=0;i<5;i++) {
+		for(j=0;j<5;j++) {
+			std::cout << "\t" <<wtable[i][j];
+		}
+	}
 
+	
 }
