@@ -1,6 +1,5 @@
 #include<stdio.h>
-#include<string>
-#include<chronos>
+#include<fstream>
 #include<iostream>
 #include <chrono>  // chrono::system_clock
 #include <ctime>   // localtime
@@ -28,7 +27,7 @@ string comptime(std::string aux) {
 		if (loglevel == 1) {
 			cout << "L[nmal] [comptime] - Successfully appended file extension: "<< aux << " became " << csvfile << endl;
 		}
-		std::fstream csvF(csvfile);
+		std::fstream csvF((csvfile).c_str());
 		if( !csvF.is_open()){
           		cout << "E[crit] [comptime] - Input file failed to open" << endl;
     		}
@@ -44,15 +43,15 @@ string comptime(std::string aux) {
 		std::ofstream out("temp.csv");
     		// loop to read/write the file.  Note that you need to add code here to check
     		// if you want to write the line
-    		while( getline(csvF,line) ){
-         		out << csF << "\n";
+    		while( std::getline(csvF,line) ){
+         		out << csvF << endl;
     		}
     		csvF.close();
     		out.close();    
     		// delete the original file
-		std::remove(csvfile);
+		std::remove((csvfile).c_str());
     		// rename old to new
-		std::rename("temp.csv",csvfile);
+		std::rename("temp.csv",(csvfile).c_str());
 		
 		int len1 = line.length();
 		line.erase(len1 - 8, len1);
@@ -60,7 +59,7 @@ string comptime(std::string aux) {
 		int len2 = currTime.length();
 		currTime.erase(len2 - 8, len2);
 		if (line.compare(currTime) == 0){
-			
+			return 0;
 		}
 
 
