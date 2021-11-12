@@ -37,8 +37,18 @@ string week(string type; int length; int style; ) {
 
 
 
-	int rows = 7; // oh no oh no, this causes the need to rewrite formatter, why may you ask? well because it needs to be passed how many classes there is in said day. This of course is easy to do using say a looper that loops through the day value and iterates a counter, say classes++. Then it stops when it stumbles upon a different day value (09 /= 10)
-	
+	int rows; // oh no oh no, this causes the need to rewrite formatter, why may you ask? well because it needs to be passed how many classes there is in said day. This of course is easy to do using say a looper that loops through the day value and iterates a counter, say classes++. Then it stops when it stumbles upon a different day value (09 /= 10)
+	if (style == 1) {
+		std::cout << "L[nmal] [chart] - Style set to 1." << std::endl;
+	}
+	else if (style == 2) {
+		std::cout << "L[nmal] [chart] - Style set to 2." << std::endl;
+	}
+	else {
+		std::cout << "E[errr] [chart] - No style defined, assuming 1." << std::endl;
+	}
+
+
 
 
 
