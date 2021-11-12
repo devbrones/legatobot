@@ -48,6 +48,7 @@ string week(string type; int length; int style; ) {
 		std::cout << "E[errr] [chart] - No style defined, assuming 1." << std::endl;
 	}
 	
+	for ()	
 
 
 
