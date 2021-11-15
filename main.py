@@ -11,10 +11,10 @@ from comp import *
 
 #Command prefix
 client = commands.Bot(command_prefix = '.')
-
 #Update calender file
 @tasks.loop(minutes=5)
 async def update():
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you fail class"))
     await client.wait_until_ready()
     log_channel = client.get_channel(LOG_CHANNEL_ID) #LOG CHANNEL
 

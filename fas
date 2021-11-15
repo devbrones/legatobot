@@ -1,0 +1,22 @@
+ csv = csvTemp[11:]
+        if len(str(int(csv[0:5].replace(":","")) + 200)) == 3:
+            self.start = str(int(csv[0:5].replace(":","")) + 200)[:1] + ":" + str(int(csv[0:5].replace(":","")) + 200)[1:]
+        else:
+            self.start = str(int(csv[0:5].replace(":","")) + 200)[:2] + ":" + str(int(csv[0:5].replace(":","")) + 200)[2:] 
+        if self.start == "":
+            self.start = "11:10"
+        else:
+            y = 0
+        print(self.start)
+
+        csv = csv[27:]
+        if len(str(int(csv[0:5].replace(":","")) + 200)) == 3:
+            self.finish = str(int(csv[0:5].replace(":","")) + 200)[:1] + ":" + str(int(csv[0:5].replace(":","")) + 200)[1:]
+        else:
+            self.finish = str(int(csv[0:5].replace(":","")) + 200)[:2] + ":" + str(int(csv[0:5].replace(":","")) + 200)[2:]
+        if self.finish == "":
+            self.finish = "11:40"
+        else:
+            y = 0
+        print(self.finish)
+

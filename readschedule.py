@@ -86,7 +86,7 @@ def compTime(s):
                     do = 0 #just do something man
  #                   print(current_time[:-8])
     except Exception as e:
-        print(f'Error: {e}')
+        print(f'Error: {e}', 'TBACK')
 
 
 def nextup(s):

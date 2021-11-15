@@ -8,7 +8,7 @@ def conv(s):
     filename = '%s.ics' % s
 # TODO: use regex to get file extension (chars after last period), in case it's not exactly 3 chars.
     file_extension = str(filename)[-3:]
-    headers = ('Start', 'End', 'Summary', 'Description', 'Location')
+    headers = ('Start', 'End', 'Summary', 'Description', 'Location', 'Url')
 
     class CalendarEvent:
         """Calendar event class"""
@@ -17,6 +17,7 @@ def conv(s):
         summary = ''
         description = ''
         location = ''
+        url = ''
 
         def __init__(self, name):
             self.name = name
@@ -43,6 +44,7 @@ def conv(s):
                     if component.get('DESCRIPTION') == None: continue #skip blank items
                     event.description = component.get('DESCRIPTION')
                     event.location = component.get('LOCATION')
+                    event.url = component.get('URL')
 
                     events.append(event)
                 f.close()
@@ -64,7 +66,7 @@ def conv(s):
                 wr = csv.writer(myfile, delimiter='¤')
                 wr.writerow(headers)
                 for event in sortedevents:
-                    values = (event.start, event.end, event.summary.encode('utf8').decode(), event.description.encode('utf8').decode(), event.location)
+                    values = (event.start, event.end, event.summary.encode('utf8').decode(), event.description.encode('utf8').decode(), event.location, event.url)
                     wr.writerow(values)
                 print("Wrote to ", csvfile, "\n")
         except IOError:
@@ -79,6 +81,7 @@ def conv(s):
         print(class_name.location)
         print(class_name.start)
         print(class_name.end)
+        print(class_name.url)
 
     open_cal()
     csv_write(filename)

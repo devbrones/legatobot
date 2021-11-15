@@ -27,10 +27,21 @@ class Commands(commands.Cog):
                 print(a_.start, a_.classroom, a_.teachers, a_.agenda)
                 embedVar = discord.Embed(title=a_.subject, color=0x0e41b5)
                 embedVar.add_field(name="Tid", value=a_.start, inline=False)  
+                embedVar.add_field(name="Slut", value=a_.finish, inline=False)  
                 embedVar.add_field(name="Klassrum", value=a_.classroom, inline=False)  
                 embedVar.add_field(name="Lärare", value=a_.teachers, inline=False)  
                 embedVar.add_field(name="Agenda", value=a_.agenda, inline=False)  
                 embedVar.add_field(name="Uppgift", value=a_.assignment, inline=False)   
+                print('::', a_.url, '::')
+                urel = str(str(a_.url).replace("['", "").replace("']", ""))
+                print(';;', urel, ';;')
+                if not urel:
+                    urel = 'https://thisisbrok.en'
+                    print(urel, 'no_url_')
+                else:
+                    y = 0
+
+                embedVar.add_field(name="Länkar", value=urel, inline=False)
                 await ctx.send(embed=embedVar)
 
             #next class (has role Mentor: Don)
@@ -39,10 +50,21 @@ class Commands(commands.Cog):
                 print(a_.start, a_.classroom, a_.teachers, a_.agenda)
                 embedVar = discord.Embed(title=a_.subject, color=0x0e41b5)
                 embedVar.add_field(name="Tid", value=a_.start, inline=False)
+                embedVar.add_field(name="Slut", value=a_.finish, inline=False)  
                 embedVar.add_field(name="Klassrum", value=a_.classroom, inline=False)
                 embedVar.add_field(name="Lärare", value=a_.teachers, inline=False)
                 embedVar.add_field(name="Agenda", value=a_.agenda, inline=False)
                 embedVar.add_field(name="Uppgift", value=a_.assignment, inline=False)
+                print('::', a_.url, '::')
+                urel = str(str(a_.url).replace("['", "").replace("']", ""))
+                print(';;', urel, ';;')
+                if not urel:
+                    urel = 'https://thisisbrok.en'
+                    print(urel, 'no_url_')
+                else:
+                    y = 0
+
+                embedVar.add_field(name="Länkar", value=urel, inline=False)
                 await ctx.send(embed=embedVar)
                 print(a_.start, a_.classroom, a_.teachers, a_.agenda)
         else:
@@ -53,10 +75,21 @@ class Commands(commands.Cog):
                 print(a_.start, a_.classroom, a_.teachers, a_.agenda)
                 embedVar = discord.Embed(title=a_.subject, color=0x0e41b5)
                 embedVar.add_field(name="Tid", value=a_.start, inline=False)  
+                embedVar.add_field(name="Slut", value=a_.finish, inline=False)  
                 embedVar.add_field(name="Klassrum", value=a_.classroom, inline=False)  
                 embedVar.add_field(name="Lärare", value=a_.teachers, inline=False)  
                 embedVar.add_field(name="Agenda", value=a_.agenda, inline=False)  
                 embedVar.add_field(name="Uppgift", value=a_.assignment, inline=False)  
+                print('::', a_.url, '::')
+                urel = str(str(a_.url).replace("['", "").replace("']", ""))
+                print(';;', urel, ';;')
+                if not urel:
+                    urel = 'https://thisisbrok.en'
+                    print(urel, 'no_url_')
+                else:
+                    y = 0
+
+                embedVar.add_field(name="Länkar", value=urel, inline=False)
                 await ctx.send(embed=embedVar)
             
             #.nextclass don
@@ -66,10 +99,21 @@ class Commands(commands.Cog):
                 print(a_.start, a_.classroom, a_.teachers, a_.agenda)
                 embedVar = discord.Embed(title=a_.subject, color=0x0e41b5)
                 embedVar.add_field(name="Tid", value=a_.start, inline=False)  
+                embedVar.add_field(name="Slut", value=a_.finish, inline=False)  
                 embedVar.add_field(name="Klassrum", value=a_.classroom, inline=False)  
                 embedVar.add_field(name="Lärare", value=a_.teachers, inline=False)  
                 embedVar.add_field(name="Agenda", value=a_.agenda, inline=False)  
                 embedVar.add_field(name="Uppgift", value=a_.assignment, inline=False)  
+                print('::', a_.url, '::')
+                urel = str(str(a_.url).replace("['", "").replace("']", ""))
+                print(';;', urel, ';;')
+                if not urel:
+                    urel = 'https://thisisbrok.en'
+                    print(urel, 'no_url_')
+                else:
+                    y = 0
+
+                embedVar.add_field(name="Länkar", value=urel, inline=False)
                 await ctx.send(embed=embedVar)
             
 
