@@ -10,7 +10,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-        		string myArray[6];
+//        		string myArray[6];
 string rtime()
 {
     auto now = std::chrono::system_clock::now();
@@ -56,15 +56,17 @@ string comptime(std::string aux) {
 		line.erase(len1 - 9, len1);
 		string currTime = rtime();
 		int len2 = currTime.length();
-		currTime.erase(len2 - 9, len2); 		cout << currTime << " | " << line << endl;
+		currTime.erase(len2 - 9, len2); 		//cout << currTime << " | " << line << endl;
 		
-		cout << fullLine << endl;
-		if (line.compare(currTime) == 0){
-			cout << currTime << " | " << line << endl;
+								//cout << fullLine << endl;
+		if (line.compare(currTime) == 0){		//cout << currTime << " | " << line << endl;
 			return fullLine;
 		}
 		else if (line.compare(currTime) == 1){
 			return 0;
+		}
+		else {
+			return fullLine;
 		}
 
 

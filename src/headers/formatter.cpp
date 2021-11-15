@@ -14,7 +14,7 @@ std::string url;
 int len;
 int found;
 
-std::string a = "No Subject Found";	
+std::string a = "E[NULL][formatter] - No Subject Found";	
 /*
 int SepFindPos(string &in) {
 	for (int i = 0; i < strlen(in); i++)
@@ -26,14 +26,18 @@ int SepFindPos(string &in) {
 */
 
 std::string format(std::string self, std::string csvTmp) {
-	std::cout << "init" << std::endl; // prints a init just so i can keep track of my own 3 braincells
-//	std::cout << self << std::endl; // god help us all
-//	std::cout << csvTmp << std::endl; // oh fuck
+	if (loglevel == 1){
+		std::cout << "L[NMAL][formatter] - Formatter initialized." << std::endl; // prints a init just so i can keep track of my own 3 braincells
+		std::cout << "L[NMAL][formatter] - Formatter passed option: " << self << std::endl; // god help us all
+		std::cout << "L[NMAL][formatter] - Formatter passed string: " << csvTmp << std::endl; // oh fuck
+	}
 
 	if (self == "start") {
 		std::string csv = csvTmp.erase (0, 11);
 		int len = csv.length();
-//		std::cout << len << std::endl;
+		if (loglevel == 1){
+			std::cout << "L[NMAL][formatter] - String length is: " << len << std::endl;
+		}
 //		std::cout << csv << std::endl;
 		csv.erase(5, len); // remove guckies
 //		std::cout << csv << std::endl;
@@ -54,7 +58,7 @@ std::string format(std::string self, std::string csvTmp) {
 		else if (tos.length() == 4) {
 			tos.insert(2, ":");
 		}
-		else {std::cout << "invalid time" << std::endl;} // we have successfully broken the space time continuum
+		else {std::cout << "E[CRIT][formatter] - invalid time" << std::endl;} // we have successfully broken the space time continuum
 //		std::cout << tos << std::endl;
 		return tos;
 	}
@@ -82,7 +86,7 @@ std::string format(std::string self, std::string csvTmp) {
 		else if (tos.length() == 4) {
 			tos.insert(2, ":");
 		}
-		else {std::cout << "invalid time" << std::endl;} // it will break
+		else {std::cout << "E[CRIT][formatter] - invalid time" << std::endl;} // it will break
 //		std::cout << tos << std::endl;
 		return tos;
 /*		int len = csv.length();
@@ -108,7 +112,7 @@ std::string format(std::string self, std::string csvTmp) {
 			return subject;		
 			}
 		else {
-			std::string a = "No Subject Found";	
+			std::string a = "[E][NULL][formatter] - No Subject Found";	
 			return a;
 		}
 	}
