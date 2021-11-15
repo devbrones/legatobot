@@ -31,7 +31,7 @@ string comptime(std::string aux) {
 		if( !csvF.is_open()){
           		cout << "E[crit] [comptime] - Input file failed to open" << endl;
     		}
-		string line = getline(csvF,1);
+		string line = istream::getline(csvF,1);
 		int len = line.length();
 		line.erase(25, len);
 		if (loglevel == 1) { 
@@ -43,7 +43,7 @@ string comptime(std::string aux) {
 		std::ofstream out("temp.csv");
     		// loop to read/write the file.  Note that you need to add code here to check
     		// if you want to write the line
-    		while( std::getline(csvF,line) ){
+    		while( istream::getline(csvF,line) ){
          		out << csvF << endl;
     		}
     		csvF.close();
