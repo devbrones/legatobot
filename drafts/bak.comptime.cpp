@@ -10,7 +10,6 @@ using std::string;
 using std::cout;
 using std::endl;
 
-        		string myArray[6];
 string rtime()
 {
     auto now = std::chrono::system_clock::now();
@@ -32,24 +31,28 @@ string comptime(std::string aux) {
 		if( !csvF.is_open()){
           		cout << "E[crit] [comptime] - Input file failed to open" << endl;
     		}
-		string line;
-		std::getline(csvF, line);
+		string line = std::getline(csvF,1);
 		int len = line.length();
+		line.erase(25, len);
 		if (loglevel == 1) { 
 			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
 		}
 
-		line.erase(25, len);
-    		if(csvF.is_open()){    			// i <3 ctrlc ctrlv
-
-        		for(int i = 0; i < 6; ++i){
-            			csvF >> myArray[i];
-        		}
+		
+    		// now open temp output file
+		std::ofstream out("temp.csv");
+    		// loop to read/write the file.  Note that you need to add code here to check
+    		// if you want to write the line
+    		while( std::getline(csvF,line) ){
+         		csvF >> out;
     		}
-
-//		cout << myArray[1] << endl;
-
-
+    		csvF.close();
+    		out.close();    
+    		// delete the original file
+		std::remove((csvfile).c_str());
+    		// rename old to new
+		std::rename("temp.csv",(csvfile).c_str());
+		
 		int len1 = line.length();
 		line.erase(len1 - 8, len1);
 		string currTime = rtime();
