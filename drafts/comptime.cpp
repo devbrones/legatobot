@@ -39,23 +39,31 @@ string comptime(std::string aux) {
 			cout << "L[nmal] [comptime] - Successfully opened, read and stored time of row 1: " << line << " Proceeding..." << endl;
 		}
 
+		// we need to add a constant here to make sure that we can still return the line that is passed to log, as it is what our wanted return value is.
+		string fullLine;
+		fullLine = line;
 		line.erase(25, len);
-    		if(csvF.is_open()){    			// i <3 ctrlc ctrlv
+    		/*if(csvF.is_open()){    			// i <3 ctrlc ctrlv
 
         		for(int i = 0; i < 6; ++i){
             			csvF >> myArray[i];
         		}
-    		}
+    		}*/
 
-//		cout << myArray[1] << endl;
 
 
 		int len1 = line.length();
-		line.erase(len1 - 8, len1);
+		line.erase(len1 - 9, len1);
 		string currTime = rtime();
 		int len2 = currTime.length();
-		currTime.erase(len2 - 8, len2);
+		currTime.erase(len2 - 9, len2); 		cout << currTime << " | " << line << endl;
+		
+		cout << fullLine << endl;
 		if (line.compare(currTime) == 0){
+			cout << currTime << " | " << line << endl;
+			return fullLine;
+		}
+		else if (line.compare(currTime) == 1){
 			return 0;
 		}
 
