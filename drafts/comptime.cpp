@@ -77,7 +77,7 @@ string comptime(std::string aux) {
 
 	}
 	catch (const std::exception& e) {
-		cout << "E[expt] - " << e.what() << endl;
+		cout << "E[expt][comptime] - Throwed exception: " << e.what() << endl;
 	}
 }
 

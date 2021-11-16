@@ -1,4 +1,4 @@
-int loglevel = 1;
+int loglevel = 0;
 #include"comptime.cpp"
 #include<iostream>
 #include"formatter.cpp"
