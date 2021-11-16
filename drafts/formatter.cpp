@@ -47,7 +47,7 @@ std::string format(std::string self, std::string csvTmp) {
 		int timeInt;
 		timeIn >> timeInt;
 //		std::cout << timeInt << std::endl;
-		int timePostInt = timeInt + 200; // i calibrated the compasses to offset for the anomaly
+		int timePostInt = timeInt + 100; // i calibrated the compasses to offset for the anomaly
 //		std::cout << timePostInt << std::endl;
 		std::stringstream to;
 		to << timePostInt;
@@ -75,7 +75,7 @@ std::string format(std::string self, std::string csvTmp) {
 		int timeInt;
 		timeIn >> timeInt;
 //		std::cout << timeInt << std::endl;
-		int timePostInt = timeInt + 200;
+		int timePostInt = timeInt + 100;
 //		std::cout << timePostInt << std::endl;
 		std::stringstream to;
 		to << timePostInt;
@@ -130,16 +130,21 @@ std::string format(std::string self, std::string csvTmp) {
 	}
 	else if (self == "agenda") { // oh god, yes i realise this will break at some time
 		int found = csvTmp.find (" - ");
-		std::string csv = csvTmp.erase(0, found);
-		csv.erase(0, 3);
-		int len = csv.length();
-		csv.erase(len - 5 , len);
+		csvTmp.erase(0, found);
+		csvTmp.erase(0, 3);
+		int len = csvTmp.length();
+		int f1 = csvTmp.find("¤");
+		csvTmp.erase(f1 , len);
 //		std::cout << csv << std::endl;
-		return csv;
+		return csvTmp;
 	}
 	else if (self == "classroom") { //this thing is so short and cute it makes my will to live look like empire state
 		int len = csvTmp.length();
-		csvTmp.erase(0, len - 3);
+		csvTmp.erase(0, 80);
+		int found = csvTmp.find("¤");
+		csvTmp.erase(0, found+2);
+		int l1 = csvTmp.length();
+		csvTmp.erase(3,l1);
 //		std::cout << csvTmp << std::endl;	
 		return csvTmp;
 	}

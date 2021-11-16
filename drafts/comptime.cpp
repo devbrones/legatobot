@@ -10,6 +10,8 @@ using std::string;
 using std::cout;
 using std::endl;
 
+string fullLine;
+
 //        		string myArray[6];
 string rtime()
 {
@@ -40,7 +42,6 @@ string comptime(std::string aux) {
 		}
 
 		// we need to add a constant here to make sure that we can still return the line that is passed to log, as it is what our wanted return value is.
-		string fullLine;
 		fullLine = line;
 		line.erase(25, len);
     		/*if(csvF.is_open()){    			// i <3 ctrlc ctrlv
@@ -60,6 +61,7 @@ string comptime(std::string aux) {
 		
 								//cout << fullLine << endl;
 		if (line.compare(currTime) == 0){		//cout << currTime << " | " << line << endl;
+			
 			return fullLine;
 		}
 		else if (line.compare(currTime) == 1){

@@ -4,12 +4,15 @@ int loglevel = 1;
 #include"formatter.cpp"
 #include<string>
 
-std::string sb = format("subject",comptime("don"));
-std::string st = format("start",comptime("don"));
-std::string et = format("end",comptime("don"));
-std::string tc = format("teacher",comptime("don"));
-std::string ag = format("agenda",comptime("don"));
-std::string cs = format("classroom",comptime("don"));
+std::string b = comptime("don");
+
+
+std::string sb = format("subject",fullLine);
+std::string st = format("start",fullLine);
+std::string et = format("end",fullLine);
+std::string tc = format("teacher",fullLine);
+std::string ag = format("agenda",fullLine);
+std::string cs = format("classroom",fullLine);
 
 
 int main(){
