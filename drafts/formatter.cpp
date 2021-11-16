@@ -31,6 +31,9 @@ std::string format(std::string self, std::string csvTmp) {
 		std::cout << "L[nmal] [formatter] - Formatter passed option: " << self << std::endl; // god help us all
 		std::cout << "L[nmal] [formatter] - Formatter passed string: " << csvTmp << std::endl; // oh fuck
 	}
+	if (csvTmp.rfind("2",0) == 1){std::cout << "E[crit][formatter] - Invalid string passed: " << csvTmp << std::endl; return "null";}
+
+	if (csvTmp == ""){return "null";}
 
 	if (self == "start") {
 		std::string csv = csvTmp.erase (0, 11);
@@ -139,13 +142,16 @@ std::string format(std::string self, std::string csvTmp) {
 		return csvTmp;
 	}
 	else if (self == "classroom") { //this thing is so short and cute it makes my will to live look like empire state
+		
 		int len = csvTmp.length();
 		csvTmp.erase(0, 80);
 		int found = csvTmp.find("¤");
 		csvTmp.erase(0, found+2);
 		int l1 = csvTmp.length();
+		if (csvTmp == "¤"){return "null";}
 		csvTmp.erase(3,l1);
 //		std::cout << csvTmp << std::endl;	
+//
 		return csvTmp;
 	}
 
