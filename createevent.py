@@ -15,7 +15,7 @@ def createEvent(guildid, clArr):
     finish = clArr[2]
     classroom = clArr[3]
     agenda = clArr[5]
-    payload = {entity_metadata{'location':classroom}, 'name':subject, 'privacy_level':'2', 'scheduled_start_time':start, 'scheduled_end_time':finish, 'description':agenda, 'entity_type':'3'}
+    payload = {"entity_metadata" : {"location":classroom}, "name" : subject, "privacy_level" : "2", "scheduled_start_time" : start, "scheduled_end_time" : finish, "description" : agenda, "entity_type" : "3"}
 
 
 

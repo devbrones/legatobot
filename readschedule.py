@@ -87,8 +87,6 @@ def compTime(s):
  #                   print(current_time[:-8])
     except Exception as e:
         print(f'Error: {e}', 'TBACK')
-
-
 def nextup(s):
     with open('%s.csv'% s, 'r') as h:
        # h.seek(2)
