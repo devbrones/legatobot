@@ -8,12 +8,15 @@ headers = {"Authorization":"Bot {}".format(botToken),
            "Content-Type":"application/json", }
 
 def getListedEvents(guildid):
-    r = requests.get('https://discordapp.com/api/guilds/' + guildid + '/scheduled-events', headers = headers)
-    if (r.status_code == "200"):
-        return r.json()
-    else:
-        print("Error, api not responding (getguildevents)")
-        return "ERROR"
+    r = requests.get('https://discord.com/api/guilds/' + guildid + '/scheduled-events', headers = headers)
+    print(r.status_code)
+    print(r.text)
+    return r.text
+    #if (r.status_code == "200"):
+    #    return r.json()
+    #else:
+    #    print("Error, api not responding (getguildevents)")
+    #    return "ERROR"
 
 def createEvent(guildid, clArr):
     subject = clArr[4] + " - " + clArr[0]
@@ -30,4 +33,14 @@ def createEvent(guildid, clArr):
     print (r.text)
     print (r.status_code)
 
+
+def vartoarray(subject,start,finish,classroom,teachers,agenda):
+    classes = []
+    classes.append(subject)
+    classes.append(start)
+    classes.append(finish)
+    classes.append(classroom)
+    classes.append(teachers)
+    classes.append(agenda)
+    return classes
 
