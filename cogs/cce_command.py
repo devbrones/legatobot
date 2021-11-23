@@ -13,7 +13,7 @@ class Commands(commands.Cog):
         self.client = client
     
     @commands.command(aliases=['add'])
-    async def susy(self, ctx):
+    async def cce(self, ctx):
         a_.csvConvert(nextup('hanna'))        
         ar = vartoarray(a_.subject,a_.start,a_.finish,a_.classroom,a_.teachers,a_.agenda)
         createEvent(ctx.message.guild.id, ar)
