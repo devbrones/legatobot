@@ -11,13 +11,14 @@ from comp import *
 
 #Command prefix
 client = commands.Bot(command_prefix = '.')
+print("set prefix")
 #Update calender file
 @tasks.loop(minutes=5)
 async def update():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you fail class"))
     await client.wait_until_ready()
     log_channel = client.get_channel(LOG_CHANNEL_ID) #LOG CHANNEL
-
+    print("updated file")
     #Mentor Don
     fileLocation = "./don.ics"
     url1 = 'https://www.schoolity.com/icalendar?id=2fce715d053b1c0f329656e44ca407ff2070f5740f1b0f458d01961bda23a247'
@@ -57,6 +58,7 @@ async def read():
     
     currentClassH = compTime('hanna')
     currentClassD = compTime('don')
+    print(currentClassD)
 
     if currentClassH == currentClassD:
         #Send one
@@ -70,6 +72,7 @@ async def read():
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
+        print("loaded cogs")
 
 @tasks.loop(minutes=1)
 async def comp():
@@ -77,5 +80,6 @@ async def comp():
     compclass('don')
     compclass('hanna')
     
-
-client.run(TOKEN)
+print("attempting to execute client.run")
+i = client.run(TOKEN)
+print(i)
