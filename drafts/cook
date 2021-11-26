@@ -1,0 +1,21 @@
+curl 'https://schoolity.com/rpc?method=encrypt' \
+  -H 'authority: schoolity.com' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' \
+  -H 'content-type: text/x-gwt-rpc; charset=UTF-8' \
+  -H 'namespace: MediaGymnasiet' \
+  -H 'x-gwt-module-base: https://schoolity.com/appimpl/' \
+  -H 'x-gwt-permutation: F1DAC8B0B648D133D322717031D94DCF' \
+  -H 'concernnamespace: MediaGymnasiet_concern' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'accept: */*' \
+  -H 'origin: https://schoolity.com' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://schoolity.com/app/' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'cookie: _ga=GA1.2.390327794.1637258232; _fbp=fb.1.1637258231838.1225661349; _gid=GA1.2.1715846975.1637828973; server-version=20211123t152509.439610736658047658; light=no; _gat=1; JSESSIONID=EbkWp6--6VbfkwJH6B_SXw; login-provider=google; session-email=21jogudm@mediagymnasiet.se' \
+  --data-raw '7|0|6|https://schoolity.com/appimpl/|6DA579251226B3BAFCAA1729CA1CA345|schoolutil.client.RPCService|encrypt|java.lang.String/2004016611|21jogudm@mediagymnasiet.se|1|2|3|4|1|5|6|' \
+  --compressed
