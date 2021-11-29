@@ -3,9 +3,17 @@
 #include<fstream>
 using std::string;
 
-string open_cal(){
-
-	if ()
+string ical2csv(string calfile, string oname, int sort_type){
+	
+	string arr[10000];
+	ifstream cal;
+	cal.open(calfile, std::ios::app);
+	if (cal.is_open()){
+		while(!cal.eof() && i < 10000) {
+			getline(cal, arr);
+		}
+		
+	}
 
 }
 
