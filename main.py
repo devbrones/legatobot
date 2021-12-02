@@ -28,7 +28,7 @@ async def update():
 
     #Mentor Hanna
     fileLocation = "./hanna.ics"
-    url1 = 'https://schoolity.com/icalendar?id=1723311cc4e32826329656e44ca407ff2070f5740f1b0f458d01961bda23a247'
+    url1 = 'https://schoolity.com/icalendar?id=bb94802b923532d7329656e44ca407ff2070f5740f1b0f458d01961bda23a247'
 
     r = requests.get(url1, allow_redirects=True)
     open(fileLocation, 'wb').write(r.content)
