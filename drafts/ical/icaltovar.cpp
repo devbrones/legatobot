@@ -7,7 +7,7 @@ using namespace std;
 string cal2arr(string user){
     FILE *ics;
     char line[100];
-    string arr[10000];
+    string arr[10000][12];
     ics = fopen("%s.ics" user, "r");
     if (ics == NULL)
         return "E[crit][cal2arr] - File open error, " + user;
