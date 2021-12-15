@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <string>
 #include <cstring>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -8,7 +10,7 @@ string cal2arr(string user){
     FILE *ics;
     char line[100];
     string arr[10000][12];
-    ics = fopen("%s.ics" user, "r");
+    ics = fopen(user+".ics", "r");
     if (ics == NULL)
         return "E[crit][cal2arr] - File open error, " + user;
     while (fgets(line, sizeof(line), ics) != NULL)
@@ -29,12 +31,13 @@ string cal2arr(string user){
         value = separator + 1; // Maybe you want to strip surrounding white spaces
 
 	//for loop goes here that scans through
-	while( key != BEGIN ){
+	while( key != "BEGIN" ){
 	
-		for (int i; i<10000){
+		for (int i; i<10000;){
 			arr[i][1] = key;
 			arr[i][2] = value;
 			i++;
+			cout << (arr[i][1]) <<endl;
 		}
 	}
 
