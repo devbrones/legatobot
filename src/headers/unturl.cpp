@@ -30,5 +30,8 @@ string usertourl(const string user, const string cookie){
 	out.erase(0,9);
 	out.erase(64, 70);
 	string url = "https://schoolity.com/icalendar?id=" + out;
-	return url;
+	if(loglevel == 1){	
+		cout << "L[nmal][unturl] - Get url: " + url << endl;
+	}
+		return url;
 }
